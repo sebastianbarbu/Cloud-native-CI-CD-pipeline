@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+    commands:
+      - echo Instalam dependentele...
+      - pip install -r requirements.txt
+  pre_build:
+    commands:
+      - echo Rulam testele automate...
+      - python -m unittest test_app.py
+  build:
+    commands:
+      - echo Testele au trecut cu succes! Se porneste faza de Docker Build...
+artifacts:
+  files:
+    - '**/*'
