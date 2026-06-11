@@ -5,15 +5,21 @@ phases:
     runtime-versions:
       python: 3.11
     commands:
-      - echo Instalam dependentele...
+      - echo "[FAZA TEST] Instalam dependentele..."
       - pip install -r requirements.txt
   pre_build:
     commands:
-      - echo Rulam testele automate...
+      - echo "[FAZA TEST] Rulam testele automate..."
       - python -m unittest test_app.py
   build:
     commands:
-      - echo Testele au trecut cu succes! Se porneste faza de Docker Build...
-artifacts:
-  files:
-    - '**/*'
+      - echo "[FAZA BUILD] Construim imaginea Docker..."
+      - docker build -t sebi-app:latest .
+  post_build:
+    commands:
+      - echo "[FAZA DEPLOY] Pornim containerul in AWS pentru verificare..."
+      - docker run -d -p 8080:8080 sebi-app:latest
+      - sleep 5
+      - echo "[FAZA DEPLOY] Verificam daca aplicatia raspunde..."
+      - curl http://localhost:8080
+      - echo "\n[SUCCES] Aplicatia a pornit si ruleaza in Cloud!"
