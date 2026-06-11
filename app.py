@@ -18,7 +18,7 @@ def index():
         </head>
         <body>
             <div class="card">
-                <h1>Cloud-Native CI/CD Pipeline - TEST</h1>
+                <h1>Cloud-Native CI/CD Pipeline</h1>
                 <p>Aplicatie livrata in mod complet automatizat printr-un pipeline de integrare si deployment continuu.</p>
                 <p><span class="status">DEPLOYMENT AUTOMAT REUSIT</span></p>
                 <div class="footer">
