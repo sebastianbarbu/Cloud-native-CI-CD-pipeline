@@ -20,7 +20,7 @@ def index():
             <div class="card">
                 <h1>Cloud-Native CI/CD Pipeline</h1>
                 <p>Aplicatie livrata in mod complet automatizat printr-un pipeline de integrare si deployment continuu.</p>
-                <p><span class="status">DEPLOYMENT AUTOMAT REUSIT - Test</span></p>
+                <p><span class="status">DEPLOYMENT AUTOMAT REUSIT - Test Live Proiect</span></p>
                 <div class="footer">
                     <strong>Masterand:</strong> Sebastian-Marian Barbu <br>
                     <strong>Stiva Tehnologica:</strong> Python / Flask / Docker / Cloud-Native Pipeline
